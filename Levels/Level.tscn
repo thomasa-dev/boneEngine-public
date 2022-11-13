@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/graybox_sprite.png" type="Texture" id=2]
+[ext_resource path="res://assets/bottle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Table.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=5]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 2 )
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="GroundCOLLISION" type="CollisionShape" parent="Ground"]
+transform = Transform( 31.486, 0, 0, 0, 0.141, 0, 0, 0, 20.707, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="GroundOBJECT" type="MeshInstance" parent="Ground"]
+transform = Transform( 31.4861, 0, 0, 0, 0.141, 0, 0, 0, 20.7065, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27824, 0 )
+
+[node name="Bottle" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, 18.0629, 1.704, 4.2551 )
+
+[node name="Table" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.599826, 0, 0, 0, 0.599826, 0, 0, 0, 0.599826, 18.7068, 0.683971, 5.27875 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.009
+anchor_top = 0.963
+anchor_right = 0.009
+anchor_bottom = 0.973
+margin_right = 124.0
+margin_bottom = 24.0
+text = "Bottle"

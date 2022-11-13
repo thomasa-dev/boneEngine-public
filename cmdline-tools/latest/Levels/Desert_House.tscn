@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Textures/sand_image.jpg" type="Texture" id=1]
+[ext_resource path="res://Levels/Desert_House.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Wooden_Post.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spawnables/Bottle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/Default.tres" type="DynamicFont" id=6]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 10, 10, 10 )
+uv1_triplanar = true
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
+
+[node name="Desert_House" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36565, 0 )
+
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="Ground_Mesh" type="MeshInstance" parent="Ground"]
+transform = Transform( 27.6894, 0, 0, 0, 0.100991, 0, 0, 0, 18.664, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Ground_Collision" type="CollisionShape" parent="Ground"]
+transform = Transform( 27.6894, 0, 0, 0, 0.100991, 0, 0, 0, 18.664, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="BottlePost_1" type="Spatial" parent="."]
+
+[node name="Bottle" parent="BottlePost_1" instance=ExtResource( 5 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, 1.30632, 2.49274, -7.18867 )
+
+[node name="Wooden_Post" parent="BottlePost_1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29351, 1.01777, -7.17944 )
+
+[node name="BottlePost_2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="Bottle" parent="BottlePost_2" instance=ExtResource( 5 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, 1.30632, 2.49274, -7.18867 )
+
+[node name="Wooden_Post" parent="BottlePost_2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29351, 1.01777, -7.17944 )
+
+[node name="BottlePost_3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+
+[node name="Bottle" parent="BottlePost_3" instance=ExtResource( 5 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, 1.30632, 2.49274, -7.18867 )
+
+[node name="Wooden_Post" parent="BottlePost_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29351, 1.01777, -7.17944 )
+
+[node name="currentItem" type="RichTextLabel" parent="."]
+anchor_left = 0.009
+anchor_top = 0.963
+anchor_right = 0.009
+anchor_bottom = 0.973
+margin_right = 124.0
+margin_bottom = 24.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = "Bottle"

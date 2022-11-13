@@ -1,0 +1,173 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Textures/graybox_sprite.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Extras/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Spawnables/Table.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spawnables/Bottle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spawnables/Target.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Spawnables/WoodenCrate.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/marrows Sandbox.gd" type="Script" id=8]
+[ext_resource path="res://Fonts/Default.tres" type="DynamicFont" id=9]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=15]
+points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=6]
+points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=8]
+points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=9]
+points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1 )
+
+[sub_resource type="CubeMesh" id=12]
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=13]
+points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1 )
+
+[node name="Sandbox-Modded" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="Ground-Mesh" type="MeshInstance" parent="Ground"]
+transform = Transform( 19.3652, 0, 0, 0, 0.0534126, 0, 0, 0, 20.205, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+transform = Transform( 19.3652, 0, 0, 0, 0.0534126, 0, 0, 0, 20.205, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.17676, 0 )
+
+[node name="Shooting-Range" type="Spatial" parent="."]
+
+[node name="Wall-1-StaticBody" type="StaticBody" parent="Shooting-Range"]
+transform = Transform( 0.200078, 0, 0, 0, 2.70697, 0, 0, 0, 6.46457, -11.6772, 2.04968, 0 )
+
+[node name="Wall-1-Mesh" type="MeshInstance" parent="Shooting-Range/Wall-1-StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00680161, 0.00781292, -0.00582422 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Wall-1-Collision" type="CollisionShape" parent="Shooting-Range/Wall-1-StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0112877, 0.00781274, 0.00306893 )
+shape = SubResource( 6 )
+
+[node name="Target-Long" parent="Shooting-Range" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.566, 0, 2.94543 )
+
+[node name="Target-Medium" parent="Shooting-Range" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1932, 0, 0.328695 )
+
+[node name="Target-Close" parent="Shooting-Range" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76225, 0, -2.63673 )
+
+[node name="Wall-2-StaticBody" type="StaticBody" parent="Shooting-Range"]
+transform = Transform( 5.26328, 0, 0, 0, 2.707, 0, 0, 0, 0.2, -6.60397, 2.05, 6.465 )
+
+[node name="Wall-2-Mesh" type="MeshInstance" parent="Shooting-Range/Wall-2-StaticBody"]
+mesh = SubResource( 7 )
+material/0 = SubResource( 10 )
+
+[node name="Wall-2-Collision" type="CollisionShape" parent="Shooting-Range/Wall-2-StaticBody"]
+shape = SubResource( 8 )
+
+[node name="Wall-3-StaticBody" type="StaticBody" parent="Shooting-Range"]
+transform = Transform( 5.26328, 0, 0, 0, 2.707, 0, 0, 0, 0.2, -6.60397, 2.05, -6.26064 )
+
+[node name="Wall-3-Mesh" type="MeshInstance" parent="Shooting-Range/Wall-3-StaticBody"]
+mesh = SubResource( 7 )
+material/0 = SubResource( 11 )
+
+[node name="Wall-3-Collision" type="CollisionShape" parent="Shooting-Range/Wall-3-StaticBody"]
+shape = SubResource( 9 )
+
+[node name="Border-StaticBody" type="StaticBody" parent="Shooting-Range"]
+transform = Transform( 0.2, 0, 0, 0, 1, 0, 0, 0, 6.465, -1.55117, 0.127056, 0 )
+
+[node name="Border-Mesh" type="MeshInstance" parent="Shooting-Range/Border-StaticBody"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="Border-Collision" type="CollisionShape" parent="Shooting-Range/Border-StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Item-Showcase" type="Spatial" parent="."]
+
+[node name="Wall-1-StaticBody" type="StaticBody" parent="Item-Showcase"]
+transform = Transform( 0.200078, 0, 0, 0, 2.70697, 0, 0, 0, 6.46457, -11.6772, 2.04968, 13.1704 )
+
+[node name="Wall-1-Mesh" type="MeshInstance" parent="Item-Showcase/Wall-1-StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00680161, 0.00781292, -0.00582422 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Wall-1-Collision" type="CollisionShape" parent="Item-Showcase/Wall-1-StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0112877, 0.00781274, 0.00306893 )
+shape = SubResource( 6 )
+
+[node name="Wall-2-StaticBody" type="StaticBody" parent="Item-Showcase"]
+transform = Transform( 5.26328, 0, 0, 0, 2.707, 0, 0, 0, 0.2, -6.60397, 2.05, 19.7356 )
+
+[node name="Wall-2-Mesh" type="MeshInstance" parent="Item-Showcase/Wall-2-StaticBody"]
+mesh = SubResource( 7 )
+material/0 = SubResource( 10 )
+
+[node name="Wall-2-Collision" type="CollisionShape" parent="Item-Showcase/Wall-2-StaticBody"]
+shape = SubResource( 8 )
+
+[node name="Bottle-Table" type="Spatial" parent="Item-Showcase"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.47333, 0.975586, 9.02712 )
+
+[node name="Table-1" parent="Item-Showcase/Bottle-Table" instance=ExtResource( 4 )]
+transform = Transform( 0.599826, 0, 0, 0, 0.599826, 0, 0, 0, 0.599826, 0.470155, -0.420572, 0.891736 )
+
+[node name="Bottle-1" parent="Item-Showcase/Bottle-Table" instance=ExtResource( 5 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, -0.0909634, 0.506279, -0.536645 )
+
+[node name="Bottle-2" parent="Item-Showcase/Bottle-Table" instance=ExtResource( 5 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, -0.0909634, 0.506279, 0.000338554 )
+
+[node name="Bottle-3" parent="Item-Showcase/Bottle-Table" instance=ExtResource( 5 )]
+transform = Transform( 0.0683189, 0, 0, 0, 0.0683189, 0, 0, 0, 0.0683189, -0.0909634, 0.506279, 0.606794 )
+
+[node name="WoodenCrate" parent="Item-Showcase/Bottle-Table" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192494, 7.81083 )
+
+[node name="Target" parent="Item-Showcase" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66833, 0.0950062, 13.1303 )
+
+[node name="currentItem" type="RichTextLabel" parent="."]
+anchor_top = 0.968
+anchor_bottom = 0.968
+margin_top = 0.200012
+margin_right = 89.0
+margin_bottom = 19.2
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Bottle"

@@ -1,0 +1,17 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "m4Anim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head/Camera/m4:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.259509, -0.533207, -0.634981 ), Vector3( 0.259509, -0.533207, -0.534727 ), Vector3( 0.26, -0.533, -0.602 ) ]
+}
