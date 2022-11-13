@@ -1,6 +1,7 @@
 # boneEngine | Godot
 [<img src="https://i.postimg.cc/Hs5v0kYZ/guilded-Button.png" />](https://guilded.gg/thomas-hub "My Guilded Server")
 [<img src="https://i.postimg.cc/KzbbmMsT/mods-Button.png" />](https://github.com/thomasa-dev/boneEngine-mod-template "Mod Template Repo")
+[<img src="https://i.postimg.cc/Xq2jQkkW/wiki-Button.png" />](https://github.com/thomasa-dev/boneEngine-mod-template/wiki)
 <br/>
 ## About
 boneEngine is a community modification-based game built with the Godot game engine. It solely relies on community-made content that are custom maps, custom spawnable items, player-modifications, vehicles, weapons or anything you can think of! Although there is no built-in vehicle system for the game I plan on working on one in the future. Meaning that you can make vehicles easier for your maps.
