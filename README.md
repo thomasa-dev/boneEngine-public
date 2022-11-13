@@ -13,7 +13,7 @@ If you would like to contribute and customize the game to your liking feel free 
   * Only exception is if it contains a UI linked to settings, pause menu, main menu or the player UI
 * Must have small comments explaining what functions do
   * Keep it to a maximum of 15 words
-<br />
+
 ## Features
 The following list are all the current features in the game
 * Custom maps + scripts
