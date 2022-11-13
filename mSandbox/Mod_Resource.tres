@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mSandbox/Mod_Resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+mod_manager = "boneLoader"
+mod_name = "marrows Sandbox"
+mod_author = "marrow"
+mod_version = 0.1

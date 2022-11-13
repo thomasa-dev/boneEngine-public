@@ -1,0 +1,73 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Models/table.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Textures/tableSprite.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="ConvexPolygonShape" id=7]
+points = PoolVector3Array( 0.247818, 0.9557, 0.260737, -0.2124, -0.927009, -0.19948, -0.23546, -1.02135, 0.247052, -0.249145, 0.9557, 0.260737, -0.249145, 0.9557, -0.236225, 0.2124, -0.932438, -0.200807, 0.247818, 0.9557, -0.236225, 0.234133, -1.02135, 0.247052 )
+
+[sub_resource type="ConvexPolygonShape" id=8]
+points = PoolVector3Array( -2.75418, -1.02135, -0.22254, -2.271, 0.9557, 0.260737, -2.76787, 0.9557, 0.260737, -2.271, 0.9557, -0.236225, -2.28468, -1.02135, 0.247052, -2.76787, 0.9557, -0.236225, -2.75418, -1.02135, 0.247052, -2.3028, -0.947216, -0.20442 )
+
+[sub_resource type="ConvexPolygonShape" id=9]
+points = PoolVector3Array( 0.247818, 0.9557, -3.66686, -0.23546, -1.02135, -4.15004, -0.2124, -0.927009, -3.7036, -0.249145, 0.9557, -4.16372, 0.234133, -1.02135, -4.15004, -0.249145, 0.9557, -3.66686, 0.247818, 0.9557, -4.16372, 0.2124, -0.932438, -3.70227 )
+
+[sub_resource type="ConvexPolygonShape" id=10]
+points = PoolVector3Array( -2.271, 0.9557, -3.66686, -2.75418, -1.02135, -4.15004, -2.75418, -1.02135, -3.68054, -2.76787, 0.9557, -4.16372, -2.28468, -1.02135, -4.15004, -2.271, 0.9557, -4.16372, -2.76787, 0.9557, -3.66686, -2.30304, -0.946227, -3.6989 )
+
+[sub_resource type="ConvexPolygonShape" id=11]
+points = PoolVector3Array( -2.75377, 0.899716, -0.222553, 0.159881, 1.1838, 0.550836, -2.76544, 1.1838, 0.550836, 0.159881, 1.1838, -2.49007, 0.319388, 0.942448, 0.716645, -2.92495, 0.942448, -2.65588, 0.319388, 0.942448, -2.65588, -2.76544, 1.1838, -2.49007, -2.92495, 0.942448, 0.716645, 0.233961, 0.899716, -0.222553, -2.71303, 0.903911, 0.2124, 0.190808, 0.903911, 0.2124 )
+
+[sub_resource type="ConvexPolygonShape" id=12]
+points = PoolVector3Array( 0.159382, 1.1838, -2.75051, -2.92494, 0.942452, -4.57676, -2.68348, 0.907012, -4.1238, 0.319196, 0.942452, -4.57676, -2.76513, 1.1838, -4.48213, -2.92494, 0.942452, -2.65588, 0.319196, 0.942452, -2.65588, -2.76513, 1.1838, -2.75051, 0.159382, 1.1838, -4.48213, 0.233765, 0.899745, -3.68025, -2.75408, 0.899745, -3.68025, 0.15901, 0.907012, -4.1238 )
+
+[node name="Table" type="RigidBody"]
+transform = Transform( 0.599826, 0, 0, 0, 0.599826, 0, 0, 0, 0.599826, 0, 0, 0 )
+
+[node name="table" type="MeshInstance" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 2 )
+material/1 = SubResource( 3 )
+material/2 = SubResource( 4 )
+material/3 = SubResource( 5 )
+material/4 = SubResource( 6 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.756757, 0, 0, 0, 0.756757, 0, 0, 0, 0.756757, 0.862256, 0, 1.60871 )
+shape = SubResource( 12 )
